@@ -1,0 +1,26 @@
+# Postprocessing Config
+postprocessing:
+  output_dir: None
+  model_path: "saved_models/2025-06-25_18-02-07/trained_model.pth"
+  sparsity_k: 10
+  use_cuda: true
+  dataset:
+    name: MNIST
+    path: ./data
+    batch_size: 128
+
+  visualizations:
+    visualize_conv_filters: true
+    sort_by_l0: true
+    sort_by_l1: true
+    visualize_codes_conv: true
+    sequential_reconstruction: true
+    cluster_atoms: true
+    cluster_codes: true
+
+  metrics:
+    compute_babel_score: true
+    compute_sample_babel_score: true
+
+  reconstruction:
+    top_k: 10

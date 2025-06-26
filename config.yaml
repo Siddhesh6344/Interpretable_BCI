@@ -1,0 +1,35 @@
+# Model Configuration
+model:
+  name: DenseAutoencoder
+  in_channels: 1
+  num_kernels: 1000
+  kernel_size: 28
+  sparsity_k: 10
+
+# Training Configuration
+training:
+  batch_size: 128
+  learning_rate: 0.0005
+  optimizer: Adam
+  num_epochs: 5
+  loss_function: top_k_auxiliary_loss
+
+# Dataset
+dataset:
+  name: MNIST
+  path: ./data
+
+# Postprocessing
+postprocessing:
+  top_k_visualization: 25
+  visualize_atoms_by:
+    - l0
+    - l1
+  dictionary_visualization_count: 1000
+  plot_l0_l1_composite: true
+
+# Saving
+saving:
+  root_dir: saved_models
+  format: "{timestamp}/trained_model.pth"
+  timestamp_format: "%Y-%m-%d_%H-%M-%S"
